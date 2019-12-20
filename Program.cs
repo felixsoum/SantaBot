@@ -20,17 +20,18 @@ namespace SantaBot
             "Nanith Omicron",
             "Alonso",
             "Nicolas",
-            "Alejandro",
+            //"Alejandro",
             "Sarkis",
             "Samuel",
-            "Minh",
+            //"Minh",
             "Youcef",
             "Alexandre",
             "Théophile",
             "Philip",
             "Leo",
-            "Daniel",
-            "Julian"
+            //"Daniel",
+            "Julian",
+            "Angeline"
         };
 
         public static void Main(string[] args)
@@ -49,7 +50,12 @@ namespace SantaBot
 
         private async Task MessageReceived(SocketMessage message)
         {
-            if (message.Content == "!raffle")
+            if (message.Content == "!name")
+            {
+                string name = $"Your username is {message.Author.Username}";
+                await message.Channel.SendMessageAsync(name);
+            }
+            else if (message.Content == "!raffle" && message.Author.Username.Contains("felix"))
             {
                 string winner = participants[random.Next(participants.Count)];
                 await message.Channel.SendMessageAsync($"The Santa raffle winner is: {winner} :gift:");
