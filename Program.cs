@@ -19,19 +19,19 @@ namespace SantaBot
         List<string> participants = new List<string>()
         {
             "Nanith Omicron",
-            "Alonso",
+//            "Alonso",
             "Nicolas",
-            //"Alejandro",
-            "Sarkis",
+            "Alejandro",
+//            "Sarkis",
             "Samuel",
-            //"Minh",
+ //           "Minh",
             "Youcef",
             "Alexandre",
             "Théophile",
-            "Philip",
+//            "Philip",
             "Leo",
-            //"Daniel",
-            "Julian",
+            "Daniel",
+//            "Julian",
             "Angeline"
         };
 
@@ -66,7 +66,7 @@ namespace SantaBot
                 if (message.Author.Id == Me)
                 {
                     string winner = participants[random.Next(participants.Count)];
-                    await message.Channel.SendMessageAsync($"The Santa raffle #1 winner is: {winner} :gift: Prize = Cuphead");
+                    await message.Channel.SendMessageAsync($"The Santa raffle #5 winner is: {winner} :gift: Prize = We Were Here Together - Co-Op Pack");
                 }
                 else
                 {
@@ -91,7 +91,7 @@ namespace SantaBot
         {
             generalChannel = (SocketTextChannel)client.GetChannel(GeneralId);
             testChannel = (SocketTextChannel)client.GetChannel(TestId);
-            await testChannel.SendMessageAsync($"All systems operational (v0.07 - Raffle #1).");
+            await testChannel.SendMessageAsync($"All systems operational (v0.11 - Raffle #5).");
         }
     }
 }
